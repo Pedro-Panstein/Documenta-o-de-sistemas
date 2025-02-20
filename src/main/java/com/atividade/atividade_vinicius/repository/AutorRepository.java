@@ -8,10 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Pedro Henrique Panstein
  * @version 1.0
- * @since 2025-02-13
- *
  * @see Autor
+ * @since 2025-02-13
  */
 public interface AutorRepository extends JpaRepository<Autor, Integer> {
-
 }
