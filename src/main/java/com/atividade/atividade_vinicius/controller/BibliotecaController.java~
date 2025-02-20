@@ -49,17 +49,6 @@ public class BibliotecaController {
         }
     }
 
-    /**
-     * Edita uma Biblioteca.
-     *
-     * <p>Recebe a requisição de uma Biblioteca editada e envia para a service.
-     *
-     * @param id         ID da Biblioteca a ser editada
-     * @param biblioteca Biblioteca a ser editada
-     * @return Emprestimo editado com sucesso (200) ou erro (400 ou 500)
-     * @Throws Exception
-     * @see BibliotecaService#editarBiblioteca(Integer, Biblioteca)
-     */
     @Operation(summary = "Atualiza um Biblioteca", description = "Recebe a requisição de um Biblioteca editado e envia para a service que gerencia as regras de negócios e aciona a repository para editar o Biblioteca e salvar no banco de dados")
     @ApiResponse(responseCode = "200", description = "Biblioteca editado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao editar o Biblioteca")
@@ -74,16 +63,6 @@ public class BibliotecaController {
         }
     }
 
-    /**
-     * Busca uma Biblioteca.
-     *
-     * <p>Recebe a requisição de uma Biblioteca pelo seu ID e envia para a service.
-     *
-     * @param id ID da Biblioteca a ser buscada
-     * @return Biblioteca encontrado com sucesso (200) ou erro (400 ou 500)
-     * @Throws Exception
-     * @see BibliotecaService#buscarBiblioteca(Integer)
-     */
     @Operation(summary = "Busca uma Biblioteca pelo ID", description = "Recebe a requisição de uma busca de uma Biblioteca por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que busca a Biblioteca no banco de dados")
     @ApiResponse(responseCode = "200", description = "Biblioteca foi encontrada com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar a Biblioteca")
@@ -98,16 +77,7 @@ public class BibliotecaController {
         }
     }
 
-    /**
-     * Busca todas as Bibliotecas.
-     *
-     * <p>Recebe a requisição de uma busca por todas as Bibliotecas e envia para a service.
-     *
-     * @return Todas as Bibliotecas encontradas com sucesso (200) ou erro (400 ou 500)
-     * @Throws Exception
-     * @see BibliotecaService#buscarBibliotecas()
-     */
-    @Operation(summary = "Busca todas as Bibliotecas", description = "Recebe a requisição de uma busca por todos as Bibliotecas, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos as Bibliotecas presentes no banco de dados")
+    @Operation(summary = "Busca todos as Bibliotecas", description = "Recebe a requisição de uma busca por todos as Bibliotecas, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos as Bibliotecas presentes no banco de dados")
     @ApiResponse(responseCode = "200", description = "Os Bibliotecas foram encontrados com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar as Bibliotecas")
     @ApiResponse(responseCode = "500", description = "Erro interno do servidor ao buscar as Bibliotecas")
@@ -121,16 +91,6 @@ public class BibliotecaController {
         }
     }
 
-    /**
-     * Deleta uma Biblioteca.
-     *
-     * <p>Recebe a requisição de uma remoção de uma Biblioteca por ID e envia para a service o id que foi passado na requisição.
-     *
-     * @param id ID da Biblioteca a ser deletada
-     * @return Biblioteca deletada com sucesso (200) ou erro (400 ou 500)
-     * @Throws Exception
-     * @see BibliotecaService#excluirBiblioteca(Integer)
-     */
     @Operation(summary = "Deleta uma Biblioteca", description = "Recebe a requisição de uma remoção de uma Biblioteca por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta a Biblioteca do banco de dados")
     @ApiResponse(responseCode = "200", description = "A Biblioteca foi deletado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletar a Biblioteca")

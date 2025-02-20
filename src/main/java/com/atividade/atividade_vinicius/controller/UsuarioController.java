@@ -35,7 +35,6 @@ public class UsuarioController {
      * @param usuario Usuário a ser adicionado
      * @return Usuário adicionado com sucesso (201) ou erro (400 ou 500)
      * @Throws Exception
-     *
      * @see UsuarioService#adiconarUsuario(Usuario)
      */
     @Operation(summary = "Adiciona um novo usuário", description = "Recebe a requisição de um novo usuário e envia para a service que gerencia as regras de negócios e aciona a repository que adiciona o usuário ao banco de dados")
@@ -57,11 +56,10 @@ public class UsuarioController {
      *
      * <p>Recebe a requisição de um usuário editado e envia para a service.
      *
-     * @param id ID do usuário a ser editado
-     * @param usuario   Usuário editado
+     * @param id      ID do usuário a ser editado
+     * @param usuario Usuário editado
      * @return Usuário editado com sucesso (200) ou erro (400 ou 500)
      * @throws Exception
-     *
      * @see UsuarioService#editarUsuario(Integer, Usuario)
      */
     @Operation(summary = "Atualiza um usuário", description = "Recebe a requisição de um usuário editado e envia para a service que gerencia as regras de negócios e aciona a repository para editar o usuário e salvar no banco de dados")
@@ -86,7 +84,6 @@ public class UsuarioController {
      * @param id ID do usuário a ser buscado
      * @return Usuário foi encontrado com sucesso (200) ou erro (400 ou 500)
      * @throws Exception
-     *
      * @see UsuarioService#buscarUsuario(Integer)
      */
     @Operation(summary = "Busca um usuário pelo ID", description = "Recebe a requisição de uma busca de um usuario por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que busca o usuário no banco de dados")
@@ -110,7 +107,6 @@ public class UsuarioController {
      *
      * @return Todos os usuários encontrados com sucesso (200) ou erro (400 ou 500)
      * @throws Exception
-     *
      * @see UsuarioService#buscarUsuarios()
      */
     @Operation(summary = "Busca todos os usuários", description = "Recebe a requisição de uma busca por todos os usuarios, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos os usuarios presentes no banco de dados")
@@ -135,13 +131,12 @@ public class UsuarioController {
      * @param id ID do usuário a ser deletado
      * @return Usuário deletado com sucesso (200) ou erro (400 ou 500)
      * @throws Exception
-     *
      * @see UsuarioService#excluirUsuario(Integer)
      */
-    @Operation(summary = "Deleta um usuários", description = "Recebe a requisição de uma remoção de um usuario por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta o usuário do banco de dados")
+    @Operation(summary = "Deleta um usuario", description = "Recebe a requisição de uma remoção de um usuario por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta o usuário do banco de dados")
     @ApiResponse(responseCode = "200", description = "O Usuario foi deletado com sucesso")
-    @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletadar os usuários")
-    @ApiResponse(responseCode = "500", description = "Erro interno do servidor ao deletadar os usuários")
+    @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletar o usuario")
+    @ApiResponse(responseCode = "500", description = "Erro interno do servidor ao deletar o usuario")
     @DeleteMapping("/excluir/{id}")
     public ResponseEntity<Void> excluirUsuario(@PathVariable Integer id) {
         try {

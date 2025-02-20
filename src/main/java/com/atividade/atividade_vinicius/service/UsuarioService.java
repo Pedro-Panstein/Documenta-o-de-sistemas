@@ -6,6 +6,7 @@ import com.atividade.atividade_vinicius.repository.UsuarioRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class UsuarioService {
      * @return O usuário recem-criado.
      * @throws RuntimeException Se o usuário não tiver todos os campos obrigatórios preenchidos
      *                          ou se houver um erro interno ao salvar o usuário.
-     * @see UsuarioService#adiconarUsuario(Usuario)
+     * @see UsuarioRepository#save(Object)
      */
     public Usuario adiconarUsuario(Usuario usuario) {
         try {
@@ -51,7 +52,7 @@ public class UsuarioService {
      * @return O usuário editado.
      * @throws RuntimeException Se o usuário n o  for encontrado ou se houver um erro interno
      * ao editar o usuário.
-     * @see UsuarioService#editarUsuario(Integer, Usuario)
+     * @see UsuarioRepository#save(Object)
      */
     public Usuario editarUsuario(Integer id, Usuario usuario) {
         try {
@@ -71,7 +72,7 @@ public class UsuarioService {
      * @throws RuntimeException Se o usuário n o  for encontrado ou se houver um erro interno
      *                          ao buscar o usuário.
      *
-     * @see UsuarioService#buscarUsuario(Integer)
+     * @see UsuarioRepository#findById(Object)
      */
     public Usuario buscarUsuario(Integer id) {
         try {
@@ -87,7 +88,7 @@ public class UsuarioService {
      * @return Uma lista contendo todos os usuários.
      * @throws RuntimeException Se houver um erro interno ao buscar os usuários.
      *
-     * @see UsuarioService#buscarUsuarios()
+     * @see UsuarioRepository#findAll()
      */
     public List<Usuario> buscarUsuarios() {
         try {
@@ -104,7 +105,7 @@ public class UsuarioService {
      * @throws RuntimeException Se o usuário n o  for encontrado ou se houver um erro interno
      *ao deletar o usuário.
      *
-     * @see UsuarioService#excluirUsuario(Integer)
+     * @see UsuarioRepository#deleteById(Object)
      */
     public void excluirUsuario(Integer id) {
         try {
