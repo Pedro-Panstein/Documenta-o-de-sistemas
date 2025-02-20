@@ -61,7 +61,6 @@ public class LivroController {
      * @throws Exception
      * @see LivroService#editarLivro(Integer, Livro)
      */
-    @Tag(name = "Livro", description = "Operações relacionadas a Livro")
     @Operation(summary = "Atualiza um Livro", description = "Recebe a requisição de um Livro editado e envia para a service que gerencia as regras de negócios e aciona a repository para editar o Livro e salvar no banco de dados")
     @ApiResponse(responseCode = "200", description = "Livro editado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao editar o Livro")
@@ -86,7 +85,6 @@ public class LivroController {
      * @throws Exception
      * @see LivroService#buscarLivro(Integer)
      */
-    @Tag(name = "Livro", description = "Operações relacionadas a Livro")
     @Operation(summary = "Busca um Livro pelo ID", description = "Recebe a requisição de uma busca de um Livro por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que busca o Livro no banco de dados")
     @ApiResponse(responseCode = "200", description = "Livro foi encontrado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar o Livro")
@@ -110,7 +108,6 @@ public class LivroController {
      * @throws Exception
      * @see LivroService#buscarLivros()
      */
-    @Tag(name = "Livro", description = "Operações relacionadas a Livro")
     @Operation(summary = "Busca todos os Livros", description = "Recebe a requisição de uma busca por todos os Livros, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos os Livros presentes no banco de dados")
     @ApiResponse(responseCode = "200", description = "Os Livros foram encontrados com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar os Livros")
@@ -135,7 +132,6 @@ public class LivroController {
      * @throws Exception
      * @see LivroService#excluirLivro(Integer)
      */
-    @Tag(name = "Livro", description = "Operações relacionadas a Livro")
     @Operation(summary = "Deleta um Livro", description = "Recebe a requisição de uma remoção de um Livro por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta o Livro do banco de dados")
     @ApiResponse(responseCode = "200", description = "O Livro foi deletado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletar o Livro")

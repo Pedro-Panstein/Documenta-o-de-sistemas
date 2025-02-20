@@ -7,7 +7,6 @@ import com.atividade.atividade_vinicius.service.AutorService;
 import com.atividade.atividade_vinicius.service.EmprestimoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +36,6 @@ public class EmprestimoController {
      * @Throws Exception
      * @see EmprestimoService#adiconarEmprestimo(Emprestimo)
      */
-    @Tag(name = "Emprestimo", description = "Operações relacionadas a Emprestimo")
     @Operation(summary = "Adiciona um novo Emprestimo", description = "Recebe a requisição de um novo Emprestimo e envia para a service que gerencia as regras de negócios e aciona a repository que adiciona o Emprestimo ao banco de dados")
     @ApiResponse(responseCode = "201", description = "Emprestimo adicionado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao adicionar o Emprestimo")
@@ -63,7 +61,6 @@ public class EmprestimoController {
      * @Throws Exception
      * @see EmprestimoService#editarEmprestimo(Integer, Emprestimo)
      */
-    @Tag(name = "Emprestimo", description = "Operações relacionadas a Emprestimo")
     @Operation(summary = "Atualiza um Emprestimo", description = "Recebe a requisição de um Emprestimo editado e envia para a service que gerencia as regras de negócios e aciona a repository para editar o Emprestimo e salvar no banco de dados")
     @ApiResponse(responseCode = "200", description = "Emprestimo editado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao editar o Emprestimo")
@@ -88,7 +85,6 @@ public class EmprestimoController {
      * @Throws Exception
      * @see EmprestimoService#buscarEmprestimo(Integer)
      */
-    @Tag(name = "Emprestimo", description = "Operações relacionadas a Emprestimo")
     @Operation(summary = "Busca um Emprestimo pelo ID", description = "Recebe a requisição de uma busca de um Emprestimo por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que busca o Emprestimo no banco de dados")
     @ApiResponse(responseCode = "200", description = "Emprestimo foi encontrado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar o Emprestimo")
@@ -112,7 +108,6 @@ public class EmprestimoController {
      * @Throws Exception
      * @see EmprestimoService#buscarEmprestimos()
      */
-    @Tag(name = "Emprestimo", description = "Operações relacionadas a Emprestimo")
     @Operation(summary = "Busca todos os Emprestimos", description = "Recebe a requisição de uma busca por todos as Bibliotecas, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos os Emprestimos presentes no banco de dados")
     @ApiResponse(responseCode = "200", description = "Os Emprestimos foram encontrados com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar os Emprestimos")
@@ -137,7 +132,6 @@ public class EmprestimoController {
      * @Throws Exception
      * @see EmprestimoService#excluirEmprestimo(Integer)
      */
-    @Tag(name = "Emprestimo", description = "Operações relacionadas a Emprestimo")
     @Operation(summary = "Deleta um Emprestimo", description = "Recebe a requisição de uma remoção de um Emprestimo por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta o Emprestimo do banco de dados")
     @ApiResponse(responseCode = "200", description = "O Emprestimo foi deletado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletar o Emprestimo")

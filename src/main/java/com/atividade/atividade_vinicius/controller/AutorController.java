@@ -6,6 +6,7 @@ import com.atividade.atividade_vinicius.service.AutorService;
 import com.atividade.atividade_vinicius.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,7 @@ public class AutorController {
      * @Throws Exception
      * @see AutorService#adiconarAutor(Autor)
      */
+    @Tag(name = "Livros", description = "Operações relacionadas a livros")
     @Operation(summary = "Adiciona um novo Autor", description = "Recebe a requisição de um novo Autor e envia para a service que gerencia as regras de negócios e aciona a repository que adiciona o Autor ao banco de dados")
     @ApiResponse(responseCode = "201", description = "Autor adicionado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao adicionar o Autor")
@@ -60,6 +62,7 @@ public class AutorController {
      * @throws Exception
      * @see AutorService#editarAutor(Integer, Autor)
      */
+    @Tag(name = "Livros", description = "Operações relacionadas a livros")
     @Operation(summary = "Atualiza um Autor", description = "Recebe a requisição de um Autor editado e envia para a service que gerencia as regras de negócios e aciona a repository para editar o Autor e salvar no banco de dados")
     @ApiResponse(responseCode = "200", description = "Autor editado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao editar o Autor")
@@ -84,6 +87,7 @@ public class AutorController {
      * @throws Exception
      * @see AutorService#buscarAutor(Integer)
      */
+    @Tag(name = "Livros", description = "Operações relacionadas a livros")
     @Operation(summary = "Busca um Autor pelo ID", description = "Recebe a requisição de uma busca de um Autor por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que busca o Autor no banco de dados")
     @ApiResponse(responseCode = "200", description = "Autor foi encontrado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar o Autor")
@@ -107,6 +111,7 @@ public class AutorController {
      * @throws Exception
      * @see AutorService#buscarAutors()
      */
+    @Tag(name = "Livros", description = "Operações relacionadas a livros")
     @Operation(summary = "Busca todos os Autores", description = "Recebe a requisição de uma busca por todos as Bibliotecas, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos os Autores presentes no banco de dados")
     @ApiResponse(responseCode = "200", description = "Os Autores foram encontrados com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar os Autores")
@@ -131,6 +136,7 @@ public class AutorController {
      * @throws Exception
      * @see AutorService#excluirAutor(Integer)
      */
+    @Tag(name = "Livros", description = "Operações relacionadas a livros")
     @Operation(summary = "Deleta um Autor", description = "Recebe a requisição de uma remoção de um Autor por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta o Autor do banco de dados")
     @ApiResponse(responseCode = "200", description = "O Autor foi deletado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletar o Autor")

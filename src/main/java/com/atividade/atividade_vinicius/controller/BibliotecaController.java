@@ -6,6 +6,7 @@ import com.atividade.atividade_vinicius.service.BibliotecaService;
 import com.atividade.atividade_vinicius.service.EmprestimoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,7 @@ public class BibliotecaController {
      * @Throws Exception
      * @see BibliotecaService#adiconarBiblioteca(Biblioteca)
      */
+    @Tag(name = "Biblioteca", description = "Operações relacionadas a Biblioteca")
     @Operation(summary = "Adiciona um novo Biblioteca", description = "Recebe a requisição de um novo Biblioteca e envia para a service que gerencia as regras de negócios e aciona a repository que adiciona o Biblioteca ao banco de dados")
     @ApiResponse(responseCode = "201", description = "Biblioteca adicionado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao adicionar o Biblioteca")
@@ -60,6 +62,7 @@ public class BibliotecaController {
      * @Throws Exception
      * @see BibliotecaService#editarBiblioteca(Integer, Biblioteca)
      */
+    @Tag(name = "Biblioteca", description = "Operações relacionadas a Biblioteca")
     @Operation(summary = "Atualiza um Biblioteca", description = "Recebe a requisição de um Biblioteca editado e envia para a service que gerencia as regras de negócios e aciona a repository para editar o Biblioteca e salvar no banco de dados")
     @ApiResponse(responseCode = "200", description = "Biblioteca editado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao editar o Biblioteca")
@@ -84,6 +87,7 @@ public class BibliotecaController {
      * @Throws Exception
      * @see BibliotecaService#buscarBiblioteca(Integer)
      */
+    @Tag(name = "Biblioteca", description = "Operações relacionadas a Biblioteca")
     @Operation(summary = "Busca uma Biblioteca pelo ID", description = "Recebe a requisição de uma busca de uma Biblioteca por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que busca a Biblioteca no banco de dados")
     @ApiResponse(responseCode = "200", description = "Biblioteca foi encontrada com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar a Biblioteca")
@@ -107,6 +111,7 @@ public class BibliotecaController {
      * @Throws Exception
      * @see BibliotecaService#buscarBibliotecas()
      */
+    @Tag(name = "Biblioteca", description = "Operações relacionadas a Biblioteca")
     @Operation(summary = "Busca todas as Bibliotecas", description = "Recebe a requisição de uma busca por todos as Bibliotecas, que envia a requisição para a service que gerencia as regras de negócios e aciona a repository que busca todos as Bibliotecas presentes no banco de dados")
     @ApiResponse(responseCode = "200", description = "Os Bibliotecas foram encontrados com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao buscar as Bibliotecas")
@@ -131,6 +136,7 @@ public class BibliotecaController {
      * @Throws Exception
      * @see BibliotecaService#excluirBiblioteca(Integer)
      */
+    @Tag(name = "Biblioteca", description = "Operações relacionadas a Biblioteca")
     @Operation(summary = "Deleta uma Biblioteca", description = "Recebe a requisição de uma remoção de uma Biblioteca por ID e envia para a service o id que foi passado na requisição, a service gerencia as regras de negócios e aciona a repository que deleta a Biblioteca do banco de dados")
     @ApiResponse(responseCode = "200", description = "A Biblioteca foi deletado com sucesso")
     @ApiResponse(responseCode = "400", description = "Erro do cliente ao deletar a Biblioteca")
